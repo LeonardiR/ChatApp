@@ -7,6 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "Chat_MyMessage_Cell.h"
+#import "Chat_OtherMessage_Cell.h"
+#import "Chat_MyImage_Cell.h"
+#import "Chat_OtherImage_Cell.h"
 
 @interface ViewController ()
 
@@ -17,7 +21,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    _HeaderView.layer.borderColor = [UIColor grayColor].CGColor;
+    _HeaderView.layer.borderWidth = 2.0f;
+    
+    _ToolBarView.layer.borderColor = [UIColor grayColor].CGColor;
+    _ToolBarView.layer.borderWidth = 2.0f;
+
 }
+
 
 
 - (void)didReceiveMemoryWarning {
