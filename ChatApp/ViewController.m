@@ -52,6 +52,34 @@
     return m_aMessages.count;
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    float height = 0.0f;
+    if (indexPath.row == 0)
+    {
+        height = 70.0f;
+    }
+    
+    if (indexPath.row == 1)
+    {
+        height = 70.0f;
+    }
+
+    if (indexPath.row == 2)
+    {
+        height = 104.0f;
+    }
+
+    if (indexPath.row == 3)
+    {
+        height = 104.0f;
+    }
+
+    return height;
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell_;

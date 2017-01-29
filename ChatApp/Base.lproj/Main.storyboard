@@ -99,23 +99,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="globo_verd_a.png" translatesAutoresizingMaskIntoConstraints="NO" id="F2x-P6-sgY">
-                                                    <rect key="frame" x="45" y="4" width="262" height="11"/>
+                                                    <rect key="frame" x="98" y="4" width="262" height="11"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="globo_verd_b.png" translatesAutoresizingMaskIntoConstraints="NO" id="sYd-fa-hal">
-                                                    <rect key="frame" x="45" y="15" width="272" height="22"/>
+                                                    <rect key="frame" x="98" y="15" width="272" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="globo_verd_c.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mi3-AF-tCC">
-                                                    <rect key="frame" x="45" y="37" width="262" height="18"/>
+                                                    <rect key="frame" x="98" y="37" width="262" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="globo_verd_d.png" translatesAutoresizingMaskIntoConstraints="NO" id="ief-8I-eC6">
-                                                    <rect key="frame" x="45" y="55" width="262" height="11"/>
+                                                    <rect key="frame" x="98" y="55" width="262" height="11"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndd-Mr-3Xl">
-                                                    <rect key="frame" x="48" y="21" width="257" height="34"/>
+                                                    <rect key="frame" x="98" y="21" width="257" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -181,7 +181,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="la_caixa_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bcv-BF-ByK">
-                                                    <rect key="frame" x="18" y="8" width="101" height="93"/>
+                                                    <rect key="frame" x="35" y="8" width="101" height="93"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -196,7 +196,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="la_caixa_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="T5E-rN-ar2">
-                                                    <rect key="frame" x="250" y="5" width="101" height="93"/>
+                                                    <rect key="frame" x="237" y="5" width="101" height="93"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
