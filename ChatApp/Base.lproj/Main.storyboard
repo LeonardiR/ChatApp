@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,11 +21,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="woowos_bg_chat.png" translatesAutoresizingMaskIntoConstraints="NO" id="u23-HE-Ucz" userLabel="Background">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgchat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="u23-HE-Ucz" userLabel="Background">
+                                <rect key="frame" x="0.0" y="-725" width="744" height="1392"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbc-b7-fEE">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbc-b7-fEE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tU-X4-T9A" userLabel="Back">
                                         <rect key="frame" x="0.0" y="23" width="41" height="47"/>
@@ -53,12 +54,10 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="Eyz-dK-Sxf"/>
-                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A9J-Ha-Abe">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A9J-Ha-Abe">
                                 <rect key="frame" x="0.0" y="601" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXZ-cF-N2u">
                                         <rect key="frame" x="298" y="16" width="69" height="30"/>
@@ -84,20 +83,19 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="Cju-v6-PHu"/>
-                                </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zfR-RE-lNm">
-                                <rect key="frame" x="0.0" y="69" width="375" height="598"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zfR-RE-lNm">
+                                <rect key="frame" x="0.0" y="69" width="375" height="541"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Chat_MyMessage_Cell" rowHeight="70" id="duq-Zi-7Gd" userLabel="Chat_Msg_Cell" customClass="Chat_MyMessage_Cell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="duq-Zi-7Gd" id="0pH-3t-WQi">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="globo_verd_a.png" translatesAutoresizingMaskIntoConstraints="NO" id="F2x-P6-sgY">
@@ -125,6 +123,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="globo_verde_a" destination="F2x-P6-sgY" id="mmx-ZT-Ki8"/>
                                             <outlet property="globo_verde_b" destination="sYd-fa-hal" id="Bz2-WI-etA"/>
@@ -137,27 +136,27 @@
                                         <rect key="frame" x="0.0" y="98" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rd3-lg-sLp" id="k17-Yx-YNQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="globo_blanc_a.png" translatesAutoresizingMaskIntoConstraints="NO" id="lEU-rs-fMV">
-                                                    <rect key="frame" x="67" y="-43" width="240" height="128"/>
+                                                    <rect key="frame" x="14" y="8" width="262" height="11"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="globo_blanc_b.png" translatesAutoresizingMaskIntoConstraints="NO" id="G6Z-iP-Op0">
-                                                    <rect key="frame" x="67" y="-43" width="240" height="128"/>
+                                                    <rect key="frame" x="4" y="15" width="272" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="globo_blanc_c.png" translatesAutoresizingMaskIntoConstraints="NO" id="Owc-7C-U7z">
-                                                    <rect key="frame" x="67" y="-43" width="240" height="128"/>
+                                                    <rect key="frame" x="14" y="37" width="262" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="globo_blanc_d.png" translatesAutoresizingMaskIntoConstraints="NO" id="1U1-sG-3mo">
-                                                    <rect key="frame" x="67" y="-43" width="240" height="128"/>
+                                                    <rect key="frame" x="14" y="55" width="262" height="11"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqv-P6-VjY">
-                                                    <rect key="frame" x="166" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="17" y="21" width="257" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -165,6 +164,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="globo_blanco_a" destination="lEU-rs-fMV" id="GBd-dk-VrF"/>
                                             <outlet property="globo_blanco_b" destination="G6Z-iP-Op0" id="Ifl-Zk-QTl"/>
@@ -177,17 +177,31 @@
                                         <rect key="frame" x="0.0" y="168" width="375" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rhg-bV-YgB" id="gq1-AD-hxf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="103"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="la_caixa_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bcv-BF-ByK">
+                                                    <rect key="frame" x="18" y="8" width="101" height="93"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Chat_MyImage_Cell" rowHeight="104" id="Epv-CW-abD" userLabel="Chat_MyImage_Cell" customClass="Chat_MyImage_Cell">
                                         <rect key="frame" x="0.0" y="272" width="375" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Epv-CW-abD" id="A97-XO-zEz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="103"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="la_caixa_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="T5E-rN-ar2">
+                                                    <rect key="frame" x="250" y="5" width="101" height="93"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -197,28 +211,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="u23-HE-Ucz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="2fH-SZ-n4O"/>
-                            <constraint firstAttribute="bottom" secondItem="zfR-RE-lNm" secondAttribute="bottom" constant="70" id="3bR-Kv-lG1"/>
-                            <constraint firstItem="gbc-b7-fEE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="4QP-YK-C8T"/>
-                            <constraint firstItem="zfR-RE-lNm" firstAttribute="top" secondItem="gbc-b7-fEE" secondAttribute="bottom" id="Afz-zk-c2H"/>
-                            <constraint firstItem="gbc-b7-fEE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Fy5-uq-Zfu"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="u23-HE-Ucz" secondAttribute="bottom" id="MAf-xF-bW8"/>
-                            <constraint firstItem="A9J-Ha-Abe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Wrv-8c-ilJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="u23-HE-Ucz" secondAttribute="trailing" constant="-16" id="hP0-d8-mXv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gbc-b7-fEE" secondAttribute="trailing" constant="-16" id="jug-RU-EB0"/>
-                            <constraint firstItem="u23-HE-Ucz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="l1G-nC-U5h"/>
-                            <constraint firstAttribute="trailing" secondItem="zfR-RE-lNm" secondAttribute="trailing" constant="-16" id="qwq-wR-cZO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="A9J-Ha-Abe" secondAttribute="trailing" constant="-16" id="wNF-aW-q1d"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A9J-Ha-Abe" secondAttribute="bottom" id="y06-XL-tQt"/>
-                            <constraint firstItem="zfR-RE-lNm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-16" id="yO3-K3-LsC"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="HeaderView" destination="gbc-b7-fEE" id="zsa-AG-lqw"/>
+                        <outlet property="TableView" destination="zfR-RE-lNm" id="6x9-O4-DdS"/>
                         <outlet property="ToolBarView" destination="A9J-Ha-Abe" id="Hcf-Fk-kbK"/>
                         <outlet property="chatField" destination="XgA-pT-KHu" id="yax-cU-b5Y"/>
-                        <outlet property="view" destination="zfR-RE-lNm" id="PjD-YE-48i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -236,6 +234,16 @@
                     <view key="view" contentMode="scaleToFill" id="9c6-4T-tMS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tQ-eE-QX4">
+                                <rect key="frame" x="153" y="318" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.70196078429999997" green="0.13725490200000001" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Chat">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -246,6 +254,7 @@
     </scenes>
     <resources>
         <image name="avatar.png" width="50" height="50"/>
+        <image name="bgchat.jpg" width="744" height="1392"/>
         <image name="globo_blanc_a.png" width="229" height="9"/>
         <image name="globo_blanc_b.png" width="237" height="45"/>
         <image name="globo_blanc_c.png" width="229" height="15"/>
@@ -254,8 +263,8 @@
         <image name="globo_verd_b.png" width="237" height="45"/>
         <image name="globo_verd_c.png" width="229" height="15"/>
         <image name="globo_verd_d.png" width="229" height="9"/>
+        <image name="la_caixa_logo.png" width="236" height="241"/>
         <image name="woowos_back_arrow.png" width="17" height="20"/>
-        <image name="woowos_bg_chat.png" width="128" height="128"/>
         <image name="woowos_chat_options.png" width="68" height="66"/>
     </resources>
 </document>

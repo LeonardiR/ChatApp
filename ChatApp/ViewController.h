@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "ChatData.h"
+
 
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *HeaderView;
