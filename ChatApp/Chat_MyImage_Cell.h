@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface Chat_MyImage_Cell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *MyImage;
 
 @end
