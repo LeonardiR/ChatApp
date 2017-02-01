@@ -11,11 +11,19 @@
 #import "ChatData.h"
 
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIActionSheetDelegate ,UIImagePickerControllerDelegate,
+UINavigationControllerDelegate>
+{
+UIAlertController*  actionSheet;
+UIImagePickerController  *m_ImgPicker;
+}
+@property (strong, nonatomic) ChatData *ChatData;
 @property (weak, nonatomic) IBOutlet UIView *HeaderView;
-
 @property (weak, nonatomic) IBOutlet UIView *ToolBarView;
 @property (weak, nonatomic) IBOutlet UITextField *chatField;
+- (IBAction)CameraBtn:(id)sender;
+- (IBAction)send:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *TextField;
 
 @end
 
