@@ -35,6 +35,7 @@
     self.TextField.delegate=self;
     self.TableView.delegate=self;
     
+    
     _HeaderView.layer.borderColor = [UIColor grayColor].CGColor;
     _HeaderView.layer.borderWidth = 2.0f;
     _ToolBarView.layer.borderColor = [UIColor grayColor].CGColor;
@@ -255,6 +256,7 @@
         [m_aMessages addObject:textEnteredRes];
         [_TableView reloadData];
         _TextField.text = [NSString stringWithFormat:@""];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
         [self goToLastMessage];
         
     }
@@ -270,6 +272,8 @@
     NSIndexPath *indexPath = [self.TableView indexPathForRowAtPoint:tapLocation];
     
     if (indexPath) {
+        
+        [self.view endEditing:YES];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
         recognizer.cancelsTouchesInView = NO;
         
