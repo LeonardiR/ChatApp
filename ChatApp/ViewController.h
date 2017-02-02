@@ -12,7 +12,7 @@
 
 
 @interface ViewController : UIViewController <UIActionSheetDelegate ,UIImagePickerControllerDelegate,
-UINavigationControllerDelegate>
+UINavigationControllerDelegate, UITextFieldDelegate, UITableViewDelegate>
 {
 UIAlertController*  actionSheet;
 UIImagePickerController  *m_ImgPicker;

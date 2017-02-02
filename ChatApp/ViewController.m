@@ -27,10 +27,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
-    _actualLastRow = 10;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnTableView:)];
+    [self.TableView addGestureRecognizer:tap];
+    _actualLastRow = 8;
     
     [self initDataChat];
+    self.TextField.delegate=self;
+    self.TableView.delegate=self;
     
     _HeaderView.layer.borderColor = [UIColor grayColor].CGColor;
     _HeaderView.layer.borderWidth = 2.0f;
@@ -183,6 +186,7 @@
 
 - (IBAction)CameraBtn:(id)sender {
     
+    
     actionSheet = [UIAlertController alertControllerWithTitle:@"CAMARA" message:@"Seleccione una opcion" preferredStyle:UIAlertControllerStyleActionSheet];
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancelar" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
@@ -227,6 +231,16 @@
     [self presentViewController:actionSheet animated:YES completion:nil];
 }
 
+-(void) goToLastMessage{
+    _actualLastRow+=2;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_actualLastRow inSection:0];
+    [_TableView scrollToRowAtIndexPath:indexPath
+                      atScrollPosition:UITableViewScrollPositionTop
+                              animated:YES];
+
+
+}
+
 - (IBAction)send:(id)sender {
     if (_TextField.text && _TextField.text.length > 0){
         ChatData *textEntered = [[ChatData alloc] init];
@@ -241,19 +255,62 @@
         [m_aMessages addObject:textEnteredRes];
         [_TableView reloadData];
         _TextField.text = [NSString stringWithFormat:@""];
+        [self goToLastMessage];
         
-        _actualLastRow+=2;
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_actualLastRow inSection:0];
-        [_TableView scrollToRowAtIndexPath:indexPath
-                              atScrollPosition:UITableViewScrollPositionTop
-                                      animated:YES];
     }
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    CGPoint scrollPt = CGPointMake(_TextField.frame.origin.x, _TextField.frame.origin.y);
-    [_TableView setContentOffset:scrollPt animated:YES];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];
+   
 }
+
+-(void) didTapOnTableView:(UIGestureRecognizer*) recognizer {
+    CGPoint tapLocation = [recognizer locationInView:self.TableView];
+    NSIndexPath *indexPath = [self.TableView indexPathForRowAtPoint:tapLocation];
+    
+    if (indexPath) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
+        recognizer.cancelsTouchesInView = NO;
+        
+    }
+}
+
+#pragma mark - Keyboard events
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    
+    [UIView animateWithDuration:0.2f animations:^{
+        
+        CGRect frame = _ToolBarView.frame;
+        frame.origin.y -= kbSize.height;
+        _ToolBarView.frame = frame;
+        frame = _TableView.frame;
+        frame.size.height -= kbSize.height;
+        _TableView.frame = frame;
+        [self goToLastMessage];
+    }];
+}
+
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    [UIView animateWithDuration:0.2f animations:^{
+        
+        CGRect frame = _ToolBarView.frame;
+        frame.origin.y += kbSize.height;
+        _ToolBarView.frame = frame;
+        frame = _TableView.frame;
+        frame.size.height += kbSize.height;
+        _TableView.frame = frame;
+    }];
+}
+
 
 #pragma mark - UIImagePickerControllerDelegate
 
@@ -271,11 +328,7 @@
        [m_aMessages addObject:imageEnteredRes];
        [_TableView reloadData];
        [picker dismissViewControllerAnimated:YES completion:NULL];
+       [self goToLastMessage];
     
-       _actualLastRow+=2;
-       NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_actualLastRow inSection:0];
-       [_TableView scrollToRowAtIndexPath:indexPath
-                      atScrollPosition:UITableViewScrollPositionTop
-                              animated:YES];
 }
 @end
