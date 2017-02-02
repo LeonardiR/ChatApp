@@ -57,26 +57,27 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    float height = 0.0f;
     ChatData* chatData = m_aMessages[indexPath.row];
-    
-    switch (chatData.m_eChatDataType) {
-        case ChatData_Message:
-        {
-            height = 70.0f;
+    CGFloat bubbleHeight;
+    CGFloat cellHeight;
+    if (chatData.m_eChatDataType == ChatData_Message){
+        UIFont *bubbleFont = [UIFont fontWithName:@"Arial" size:14.0];
+        CGSize size = [chatData.m_sMessage sizeWithAttributes:@{NSFontAttributeName: bubbleFont}];
         
-        }
-            break;
-        case ChatData_Image:
+        bubbleHeight= ((size.width/250)*size.height) +size.height;
+        
+        if (bubbleHeight < 34)
         {
-            height = 104.0f;
+            bubbleHeight = 34;
         }
-            break;
-        default:
-            break;
+        cellHeight = bubbleHeight + 36;
+        
+    }else
+    {
+        cellHeight = 104;
     }
     
-    return height;
+    return cellHeight;
 }
 
 
